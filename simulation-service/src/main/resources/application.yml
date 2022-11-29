@@ -1,0 +1,29 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: simulation-service
+gpsSimmulator:
+  googleApiKey: AIzaSyDvdz2cb4zfp8NQVFu4kdzXFoIcHG744I4
+
+next:
+  service:
+    url: http://message-source-service/api/locations
+
+paths:
+  json:
+    url: /paths.json
+
+directions:
+  json:
+    url: /directions.json
+
+---
+spring:
+  profiles: test
+ribbon:
+  eureka:
+    enabled: false
+message-source-service:
+  ribbon:
+    listOfServers: localhost:9006

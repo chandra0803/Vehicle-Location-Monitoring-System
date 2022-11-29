@@ -1,0 +1,9 @@
+server:
+  port: 9006
+spring:
+  application:
+    name: message-source-service
+  cloud:
+    stream:
+      bindings:
+        output: vehicles
